@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SnapiCore.Data;
 using SnapiCore.Data.Models;
+using SnapiCore.Dto;
 using SnapiCore.Models;
 
 namespace SnapiCore.Services
@@ -18,7 +19,7 @@ namespace SnapiCore.Services
         }
 
 
-        public async Task<Result<CreateUserStatus, User>> CreateUserAsync(string name)
+        public async Task<Result<CreateUserStatus, CreateUserDto>> CreateUserAsync(string name)
         {
             if (string.IsNullOrWhiteSpace(name) || name.Length <= 3)
                 return (CreateUserStatus.TooShortName, null);
@@ -42,7 +43,7 @@ namespace SnapiCore.Services
 
             await _context.SaveChangesAsync();
 
-            return (CreateUserStatus.Created, user);
+            return (CreateUserStatus.Created, DtoConverter.ToDto(user));
         }
 
         private static string ToIndexName(string name)
@@ -51,7 +52,7 @@ namespace SnapiCore.Services
         }
 
 
-        public async Task<Result<SubscribeStatus, SubscriberLink>> SubscribeAsync(string subscriberName, string subscriptionName)
+        public async Task<Result<SubscribeStatus, SubscribeResultDto>> SubscribeAsync(string subscriberName, string subscriptionName)
         {
             var subscriber = await _context.Users.AsQueryable()
                 .FirstOrDefaultAsync(x => x.IndexName == ToIndexName(subscriberName));
@@ -79,10 +80,10 @@ namespace SnapiCore.Services
 
             await _context.SaveChangesAsync();
 
-            return (SubscribeStatus.Subscribed, link);
+            return (SubscribeStatus.Subscribed, DtoConverter.ToDto(link));
         }
 
-        public IEnumerable<UserDto> GetTopPersons(int maxCount)
+        public IEnumerable<UserSubscriptionDto> GetTopPersons(int maxCount)
         {
             //Какая-то бага EfCore SQLite, из-за которой GroupBy не хочет работать.
             //Так как база небольшая, можно и в памяти выполнить
@@ -101,7 +102,7 @@ namespace SnapiCore.Services
                 .Take(maxCount);
 
 
-            return users.Select(x => new UserDto()
+            return users.Select(x => new UserSubscriptionDto()
             {
                 Name = x.subscribers.First().To.Name,
                 SubscribersCount = x.count,

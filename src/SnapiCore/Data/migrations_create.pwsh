@@ -1,0 +1,1 @@
+﻿dotnet ef migrations add Initial -p SnapiCore/SnapiCore.csproj -s SnapiWebApi/SnapiWebApi.csproj --context SnapiCore.Data.SnapiDbContext

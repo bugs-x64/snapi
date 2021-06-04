@@ -40,6 +40,15 @@ namespace SnapiCore.Data
             modelBuilder.Entity<SubscriberLink>()
                 .HasOne(p => p.To)
                 .WithMany(b => b.Subscribers);
+            modelBuilder.Entity<User>()
+                .HasIndex(x => x.IndexName)
+                .IsUnique();
+            modelBuilder.Entity<SubscriberLink>()
+                .HasIndex(x =>
+                new {
+                    x.FromId,
+                    x.ToId
+                });
         }
     }
 }
