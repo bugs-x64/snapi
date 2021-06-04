@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using SnapiCore.Data;
+using SnapiCore.Services;
 using SnapiWebApi.Controllers;
 
 namespace SnapiWebApi
@@ -27,7 +28,7 @@ namespace SnapiWebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SnapiWebApi", Version = "v1" });
             });
             
-            services.AddDbContext<SnapiDbContext>(b => SnapiDbContext.ConfigureBuilder(b));
+            services.AddDbContext<SnapiDbContext>(b => SnapiDbContext.ConfigureBuilder(b, @"Data Source=snapi.db"));
 
             services.AddScoped<UsersService>();
         }

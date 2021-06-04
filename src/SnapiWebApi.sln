@@ -4,9 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnapiWebApi", "SnapiWebApi\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnapiCore", "SnapiCore\SnapiCore.csproj", "{2DBE8BB0-F4A4-46B8-AA08-70B0919A79FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnapiCore.UnitTests", "SnapiCore.UnitTests\SnapiCore.UnitTests.csproj", "{70FB2E87-E0BD-4E94-8FD1-30F9E7B9F843}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnapiWebApi.IntegrationTests", "SnapiWebApi.IntegrationTests\SnapiWebApi.IntegrationTests.csproj", "{75B200CA-4DF4-436C-A4F0-E8FA5992CD0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnapiCore.IntegrationTests", "SnapiCore.IntegrationTests\SnapiCore.IntegrationTests.csproj", "{4A11F338-4712-4DC1-BEA8-CF7BF77AFFA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,13 +20,9 @@ Global
 		{2DBE8BB0-F4A4-46B8-AA08-70B0919A79FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DBE8BB0-F4A4-46B8-AA08-70B0919A79FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DBE8BB0-F4A4-46B8-AA08-70B0919A79FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70FB2E87-E0BD-4E94-8FD1-30F9E7B9F843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70FB2E87-E0BD-4E94-8FD1-30F9E7B9F843}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70FB2E87-E0BD-4E94-8FD1-30F9E7B9F843}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70FB2E87-E0BD-4E94-8FD1-30F9E7B9F843}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75B200CA-4DF4-436C-A4F0-E8FA5992CD0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75B200CA-4DF4-436C-A4F0-E8FA5992CD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75B200CA-4DF4-436C-A4F0-E8FA5992CD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75B200CA-4DF4-436C-A4F0-E8FA5992CD0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A11F338-4712-4DC1-BEA8-CF7BF77AFFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A11F338-4712-4DC1-BEA8-CF7BF77AFFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A11F338-4712-4DC1-BEA8-CF7BF77AFFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A11F338-4712-4DC1-BEA8-CF7BF77AFFA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

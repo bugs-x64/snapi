@@ -15,13 +15,13 @@ namespace SnapiCore.Data
         public static SnapiDbContext Build()
         {
             var builder = new DbContextOptionsBuilder<SnapiDbContext>();
-            ConfigureBuilder(builder);
+            ConfigureBuilder(builder, @"Data Source=test.db");
             return new SnapiDbContext(builder.Options);
         }
         
-        public static DbContextOptionsBuilder ConfigureBuilder(DbContextOptionsBuilder builder)
+        public static DbContextOptionsBuilder ConfigureBuilder(DbContextOptionsBuilder builder, string connectionString)
         {
-            builder.UseSqlite(@"Data Source=blogging.db");
+            builder.UseSqlite(connectionString);
             builder.EnableSensitiveDataLogging();
             builder.LogTo(Console.WriteLine);
             return builder;
