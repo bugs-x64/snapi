@@ -1,5 +1,7 @@
 # SnapiWebApi
 
+![memes](https://img.memecdn.com/Has-your-life-changed-since-The-Social-Network-came-out_o_79675.jpg)
+
 Приложение разбито на слои: 
 * слой представления - SnapiController
 * слой бизнес-логики - UsersService
